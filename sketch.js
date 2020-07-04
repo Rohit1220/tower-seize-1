@@ -3,6 +3,7 @@ const World= Matter.World;
 const Bodies = Matter.Bodies;
 const Constraint = Matter.Constraint;
 var engine, world;
+var gameState = launched = (stone1.velocityx<=1 || stone1.velocityY<=0.5)
 function setup() {
   createCanvas(1100,800);
   engine=Engine.create(); 
@@ -34,6 +35,7 @@ function setup() {
   block24 = new block (600,300,50,50);
   block25 = new block (1000,300,50,50);
   stone1 = new stone (50,50,50);
+  sling1 = new SlingShot(stone1.body,{x:50,y:50});
 }
 function draw() {
   background(255,255,255); 
@@ -65,5 +67,12 @@ function draw() {
   block24.display();
   block25.display();
   stone1.display();
+  sling1.display();
   drawSprites();
+}
+function mouseDragged(){
+      Matter.Body.setPosition(stone1.body, {x: mouseX , y: mouseY});
+}
+function mouseReleased(){
+  SlingShot.fly();
 }

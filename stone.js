@@ -8,7 +8,7 @@ class stone
 		this.x=x;
 		this.y=y;
         this.r=r
-        Matter.Bodies.polygon(this.x, this.y,50,this.r, [options])
+        this.body=Matter.Bodies.polygon(this.x, this.y,50,this.r, [options])
 		World.add(world, this.body);
 	}
 	display()
@@ -19,7 +19,7 @@ class stone
 			rectMode(CENTER)
 			strokeWeight(3);
 			fill(255,0,255)
-			ellipse(0,0,this.r, this.r);
+			ellipse(0,0,50, this.r);
 			pop()
 	}
 }
