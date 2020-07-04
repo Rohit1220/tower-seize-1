@@ -4,6 +4,7 @@ class stone
 	{
 		var options={
 			isStatic:false,
+			restitution:0
 			}
 		this.x=x;
 		this.y=y;
