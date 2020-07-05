@@ -8,6 +8,8 @@ function setup() {
   engine=Engine.create(); 
   world=engine.world;
   Ground1 = new Ground(800,305,550,10);
+  ground2 = new Ground(width/2,height-10,width,10)
+  ground3 = new Ground(width-10,height/2,10,height)
   block1 = new block (800,300,50,50);
   block2 = new block (800,250,50,50);
   block3 = new block (800,200,50,50);
@@ -34,12 +36,13 @@ function setup() {
   block24 = new block (600,300,50,50);
   block25 = new block (1000,300,50,50);
   stone1 = new stone (250,50,50);
-  sling1 = new SlingShot(stone1.body,{x:250,y:250});
+  sling1 = new SlingShot(stone1.body,{x:250,y:150});
 }
 function draw() {
   background(255,255,255); 
   Engine.update(engine); 
   Ground1.display();
+  ground2.display();
   block1.display();
   block2.display();
   block3.display();
